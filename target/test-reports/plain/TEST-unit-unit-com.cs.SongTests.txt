@@ -1,0 +1,11 @@
+Testsuite: com.cs.SongTests
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.795 sec
+------------- Standard Output ---------------
+--Output from testMinimumDuration--
+ddd
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testMinimumDuration--
+------------- ---------------- ---------------
+
+Testcase: testMinimumDuration took 0.771 sec
