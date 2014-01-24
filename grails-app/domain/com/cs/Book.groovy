@@ -12,7 +12,7 @@ class Book {
     Integer genre
 
     static mapping = {
-        table 'book'
+        table 'books'
         version false
 
         id column:'book_id'
@@ -30,6 +30,5 @@ class Book {
         title blank: false
         author blank: false
         rating range: 1..10
-        endDate blank: true
     }
 }
