@@ -63,8 +63,8 @@ class GenreController {
         if (version != null) {
             if (genreInstance.version > version) {
                 genreInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                        [message(code: 'genre.label', default: 'Genre')] as Object[],
-                        "Another user has updated this Genre while you were editing")
+                          [message(code: 'genre.label', default: 'Genre')] as Object[],
+                          "Another user has updated this Genre while you were editing")
                 render(view: "edit", model: [genreInstance: genreInstance])
                 return
             }

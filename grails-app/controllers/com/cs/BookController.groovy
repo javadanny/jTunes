@@ -12,7 +12,6 @@ class BookController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        //def genreInstanceList: Genre.list(params)
         [bookInstanceList: Book.list(params), bookInstanceTotal: Book.count()]
     }
 
@@ -33,6 +32,10 @@ class BookController {
 
     def show(Long id) {
         def bookInstance = Book.get(id)
+        def genreInstance = Genre.get(bookInstance.genre)
+        if (genreInstance) {
+            println("genre: " + genreInstance.name)
+        }
         if (!bookInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'book.label', default: 'Book'), id])
             redirect(action: "list")
