@@ -23,21 +23,19 @@
 			<table>
 				<thead>
 					<tr>
-					
-						<g:sortableColumn property="description" title="${message(code: 'genre.description.label', default: 'Description')}" />
-					
+
 						<g:sortableColumn property="name" title="${message(code: 'genre.name.label', default: 'Name')}" />
+                        <g:sortableColumn property="description" title="${message(code: 'genre.description.label', default: 'Description')}" />
 					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${genreInstanceList}" status="i" var="genreInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
+
+                        <td>${fieldValue(bean: genreInstance, field: "name")}</td>
 						<td><g:link action="show" id="${genreInstance.id}">${fieldValue(bean: genreInstance, field: "description")}</g:link></td>
-					
-						<td>${fieldValue(bean: genreInstance, field: "name")}</td>
-					
+
 					</tr>
 				</g:each>
 				</tbody>
