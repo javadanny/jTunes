@@ -12,7 +12,7 @@ class Book {
     Integer genre
 
     static mapping = {
-        table 'books'
+        table 'book'
         version false
 
         id column:'book_id'

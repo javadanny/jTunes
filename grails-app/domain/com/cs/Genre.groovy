@@ -5,6 +5,9 @@ class Genre {
     String name
     String description
 
+    //static hasMany = [book:Book]
+    //static belongsTo = Book      <-- bidirectional; cascade delete
+
     static mapping = {
         table 'genre'
         version false
