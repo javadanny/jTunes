@@ -1,10 +1,11 @@
 
-<%@ page import="com.cs.Book" %>
+<%@ page import="com.cs.*" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'book.label', default: 'Book')}" />
+
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -49,12 +50,21 @@
 					
 				</li>
 				</g:if>
+
+                <g:if test="${bookInstance?.startDate}">
+                    <li class="fieldcontain">
+                        <span id="startDate-label" class="property-label"><g:message code="book.startDate.label" default="Start Date" /></span>
+
+                        <span class="property-value" aria-labelledby="startDate-label"><g:formatDate date="${bookInstance?.startDate}" format="MM-dd-yyyy" /></span>
+
+                    </li>
+                </g:if>
 			
 				<g:if test="${bookInstance?.endDate}">
 				<li class="fieldcontain">
 					<span id="endDate-label" class="property-label"><g:message code="book.endDate.label" default="End Date" /></span>
 					
-						<span class="property-value" aria-labelledby="endDate-label"><g:formatDate date="${bookInstance?.endDate}" /></span>
+						<span class="property-value" aria-labelledby="endDate-label"><g:formatDate date="${bookInstance?.endDate}" format="MM-dd-yyyy" /></span>
 					
 				</li>
 				</g:if>
@@ -63,7 +73,10 @@
 				<li class="fieldcontain">
 					<span id="genre-label" class="property-label"><g:message code="book.genre.label" default="Genre" /></span>
 					
-						<span class="property-value" aria-labelledby="genre-label"><g:fieldValue bean="${bookInstance.genre}" field="name"/></span>
+						<span class="property-value" aria-labelledby="genre-label">
+                            <g:set var="genreInstance" value="${Genre.get(bookInstance?.genre)}" />
+                            <g:fieldValue bean="${genreInstance}" field="name" />
+                        </span>
 					
 				</li>
 				</g:if>
@@ -84,16 +97,8 @@
 						<span class="property-value" aria-labelledby="numOfPages-label"><g:fieldValue bean="${bookInstance}" field="numOfPages"/></span>
 					
 				</li>
-				</g:if>
-			
-				<g:if test="${bookInstance?.startDate}">
-				<li class="fieldcontain">
-					<span id="startDate-label" class="property-label"><g:message code="book.startDate.label" default="Start Date" /></span>
-					
-						<span class="property-value" aria-labelledby="startDate-label"><g:formatDate date="${bookInstance?.startDate}" /></span>
-					
-				</li>
-				</g:if>
+                </g:if>
+
 			
 			</ol>
 			<g:form>

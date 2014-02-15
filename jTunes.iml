@@ -98,7 +98,6 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/cglib/cglib/jars/cglib-2.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.10.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.5.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-ehcache/jars/hibernate-ehcache-3.6.10.Final.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/dom4j/dom4j/jars/dom4j-1.6.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.7.jar!/" />

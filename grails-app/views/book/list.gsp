@@ -30,19 +30,19 @@
 					
 						<g:sortableColumn property="rating" title="${message(code: 'book.rating.label', default: 'Rating')}" />
 
-                        <g:sortableColumn property="startDate" title="${message(code: 'book.startDate.label', default: 'End Date')}" />
+                        <g:sortableColumn property="startDate" title="${message(code: 'book.startDate.label', default: 'Start Date')}" />
 					
 						<g:sortableColumn property="endDate" title="${message(code: 'book.endDate.label', default: 'End Date')}" />
 					
 						<g:sortableColumn property="genre" title="${message(code: 'book.genre.label', default: 'Genre')}" />
 					
-						<g:sortableColumn property="isCompleted" title="${message(code: 'book.isCompleted.label', default: 'Is Completed')}" />
+						<g:sortableColumn property="isCompleted" title="${message(code: 'book.isCompleted.label', default: 'Finished?')}" />
 					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${bookInstanceList}" status="i" var="bookInstance">
-                    <g:set var="genreInstance" value="${Genre.get(1)}" />
+                    <g:set var="genreInstance" value="${Genre.get(bookInstance.genre)}" />
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${bookInstance.id}">${fieldValue(bean: bookInstance, field: "title")}</g:link></td>

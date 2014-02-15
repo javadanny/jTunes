@@ -40,15 +40,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="genre" type="number" value="${bookInstance.genre}" required=""/>
-
-    <!--
-    <g:select name="genre"
-              from="${genreInstanceList}"
-              value="bookInstance.genre"
-              optionValue="name"
-              optionKey="id" />
-    -->
-
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'isCompleted', 'error')} ">
