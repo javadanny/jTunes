@@ -17,7 +17,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Carroll Solutions : Showcase</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/jTunes/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <script src="/jTunes/js/countdown.js"></script>
+
 </head>
 
 <body>
@@ -46,9 +48,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Carroll Solutions</a>
         </div>
+
         <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">Stuff</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Daniel Carroll (CEO)</a></li>
+                        <li><a href="#">Cool Breeze (CTO)</a></li>
+                        <li><a href="#">Zero (CFO)</a></li>
+                        <li><a href="#">Mordecai</a></li>
+                        <li><a href="#">Lilith</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Part Time Help</li>
+                        <li><a href="#">Tiny Tina</a></li>
+                        <li><a href="#">Handsome Jack</a></li>
+                    </ul>
+                </li>
+            </ul>
+        <!--
+        </div>
+
+        <div class="navbar-collapse collapse">
+        -->
             <form class="navbar-form navbar-right" role="form">
                 <div class="form-group">
                     <input type="text" placeholder="Email" class="form-control">
@@ -65,8 +92,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <h1>Carroll Solutions is alive!!!</h1>
+        <p><script language="JavaScript">displayDeepThought()</script></p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
     </div>
 </div>
@@ -75,17 +102,41 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h3>Application Status</h3>
+            <ul>
+                <li>App version: <g:meta name="app.version"/></li>
+                <li>Grails version: <g:meta name="app.grails.version"/></li>
+                <li>Groovy version: ${GroovySystem.getVersion()}</li>
+                <li>JVM version: ${System.getProperty('java.version')}</li>
+                <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
+                <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
+                <li>Domains: ${grailsApplication.domainClasses.size()}</li>
+                <li>Services: ${grailsApplication.serviceClasses.size()}</li>
+                <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+            </ul>
+            <h4>Installed Plugins</h4>
+            <ul>
+                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
+                    <li>${plugin.name} - ${plugin.version}</li>
+                </g:each>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Available Controllers</h3>
+            <ul>
+                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                    <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+                </g:each>
+            </ul>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
+            <h3>Nebraska Stuff</h3>
+            <p>
+                <div class="alert alert-success">
+                <script language="JavaScript">countdown(2014,08,20)</script>
+                </div>
+            </p>
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
@@ -94,7 +145,7 @@
     <hr>
 
     <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; Carroll Solutions 2014</p>
     </footer>
 </div> <!-- /container -->
 
@@ -104,5 +155,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/jTunes/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
