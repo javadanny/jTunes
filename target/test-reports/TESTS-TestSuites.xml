@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="ml-c02ffergdf8v.satx.rr.com" id="0" name="SongTests" package="com.cs" tests="1" time="0.795" timestamp="2013-12-08T04:46:01">
+      <properties />
+
+      <testcase classname="com.cs.SongTests" name="testMinimumDuration" time="0.771" />
+
+      <system-out><![CDATA[--Output from testMinimumDuration--
+ddd
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testMinimumDuration--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
