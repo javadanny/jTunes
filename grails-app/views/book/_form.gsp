@@ -26,6 +26,14 @@
 	<g:select name="rating" from="${1..10}" class="range" required="" value="${fieldValue(bean: bookInstance, field: 'rating')}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'startDate', 'error')} required">
+	<label for="startDate">
+		<g:message code="book.startDate.label" default="Start Date" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="startDate" precision="day"  value="${bookInstance?.startDate}"  />
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'endDate', 'error')} required">
 	<label for="endDate">
 		<g:message code="book.endDate.label" default="End Date" />
@@ -58,11 +66,5 @@
 	<g:field name="numOfPages" type="number" value="${bookInstance.numOfPages}" required=""/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'startDate', 'error')} required">
-	<label for="startDate">
-		<g:message code="book.startDate.label" default="Start Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="startDate" precision="day"  value="${bookInstance?.startDate}"  />
-</div>
+
 
