@@ -47,7 +47,7 @@
 		<g:message code="book.genre.label" default="Genre" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="genre" type="number" value="${bookInstance.genre}" required=""/>
+	 <g:select name="genre.id" from="${genreInstance}" optionValue="name" optionKey="id" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'isCompleted', 'error')} ">
