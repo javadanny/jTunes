@@ -23,7 +23,9 @@
     <link href="/jTunes/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <!-- 
+    <link href="/jTunes/css/jumbotron.css" rel="stylesheet">
+	-->
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -102,23 +104,18 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h3>Application Status</h3>
+            <h3>Daily Reading List</h3>
             <ul>
-                <li>App version: <g:meta name="app.version"/></li>
-                <li>Grails version: <g:meta name="app.grails.version"/></li>
-                <li>Groovy version: ${GroovySystem.getVersion()}</li>
-                <li>JVM version: ${System.getProperty('java.version')}</li>
-                <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-                <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-                <li>Domains: ${grailsApplication.domainClasses.size()}</li>
-                <li>Services: ${grailsApplication.serviceClasses.size()}</li>
-                <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+                <li><a href="http://arstechnica.com">Ars Technica</a></li>
+                <li><a href="http://slashdot.org">Slashdot</a></li>
+                <li><a href="http://lifehack.org">Lifehack.org</a></li>
+                <li></li>
             </ul>
-            <h4>Installed Plugins</h4>
+            <h3>Online Learning</h3>
             <ul>
-                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                    <li>${plugin.name} - ${plugin.version}</li>
-                </g:each>
+            	<li><a href="http://scholar.google.com/">Google Scholar</a></li>
+            	<li><a href="http://stackexchange.com">Stack Exchange</a></li>
+            	
             </ul>
         </div>
         <div class="col-md-4">
@@ -134,10 +131,13 @@
             <h3>Nebraska Stuff</h3>
             <p>
                 <div class="alert alert-success">
-                <script language="JavaScript">countdown(2014,08,20)</script>
+                <script language="JavaScript">countdown(2014,08,30)</script>
                 </div>
             </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <ul>
+            	<li><a href="http://huskerboard.com">Huskerboard</a></li>
+            	<li><a href="http://huskermax.com">Huskermax</a></li>
+            </ul>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
     </div>
@@ -145,7 +145,11 @@
     <hr>
 
     <footer>
-        <p>&copy; Carroll Solutions 2014</p>
+        <p>
+        	&copy; Carroll Solutions 2014&nbsp;
+            <a href="/jTunes/system">System Specs</a>
+        </p>
+        
     </footer>
 </div> <!-- /container -->
 
@@ -155,6 +159,9 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/jTunes/dist/js/bootstrap.min.js"></script>
+
+
+	
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 <%@ page import="com.cs.Book" %>
-
-
+<%@ page import="com.cs.Genre" %>
 
 <div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'title', 'error')} required">
 	<label for="title">
@@ -47,13 +46,18 @@
 		<g:message code="book.genre.label" default="Genre" />
 		<span class="required-indicator">*</span>
 	</label>
-	 <g:select name="genre.id" from="${genreInstance}" optionValue="name" optionKey="id" />
+	 	
+	<g:select name="genre" 
+	          from="${Genre.list()}" 
+	          value="${bookInstance.genre}" 
+	          optionKey="id" 
+	          optionValue="name"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'isCompleted', 'error')} ">
 	<label for="isCompleted">
 		<g:message code="book.isCompleted.label" default="Is Completed" />
-		
 	</label>
 	<g:checkBox name="isCompleted" value="${bookInstance?.isCompleted}" />
 </div>

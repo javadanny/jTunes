@@ -5,11 +5,17 @@ import org.springframework.dao.DataIntegrityViolationException
 class GenreController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	
+	/*
+	 * APP: landing page for genre
+	 */
     def index() {
         redirect(action: "list", params: params)
     }
 
+	/*
+	 * APP: show table of genres
+	 */
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [genreInstanceList: Genre.list(params), genreInstanceTotal: Genre.count()]

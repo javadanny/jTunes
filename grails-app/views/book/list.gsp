@@ -42,6 +42,7 @@
 				</thead>
 				<tbody>
 				<g:each in="${bookInstanceList}" status="i" var="bookInstance">
+					<!--  this is where the specific genre gets set so that we can show the value below -->
                     <g:set var="genreInstance" value="${Genre.get(bookInstance.genre)}" />
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					

@@ -18,4 +18,6 @@ class Genre {
     }
     static constraints = {
     }
+	
+	static toString
 }

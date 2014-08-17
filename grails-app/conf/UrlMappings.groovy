@@ -11,5 +11,6 @@ class UrlMappings {
 		"500"(view:'/error')
 
         "/jumbo"(view:'/jumbotron')
+		"/system"(view:'/system')
 	}
 }
