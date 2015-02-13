@@ -3,7 +3,7 @@
  */
 
 //change the text below to reflect your own,
-var before = "kickoff against Florida Atlantic!!!"
+var before = "kickoff against McNeese State!!!"
 var current = "It's GAMEDAY!!!"
 var montharray = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 

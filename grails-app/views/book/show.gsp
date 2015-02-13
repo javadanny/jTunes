@@ -98,8 +98,17 @@
 					
 				</li>
                 </g:if>
-
-			
+                
+                <g:if test="${bookInstance?.bookUrl}">
+				<li class="fieldcontain">
+					<span id="url-label" class="property-label"><g:message code="book.url.label" default="Amazon URL" /></span>
+					
+						<span class="property-value" aria-labelledby="url-label">
+						<g:link url="${bookInstance?.bookUrl}" target="_blank">
+							<img src="${bookInstance?.imageUrl}" height=300 width=180>
+						</g:link></span>
+				</li>
+                </g:if>
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

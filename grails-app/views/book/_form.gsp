@@ -38,7 +38,9 @@
 		<g:message code="book.endDate.label" default="End Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="endDate" precision="day"  value="${bookInstance?.endDate}"  />
+	<g:datePicker name="endDate" 
+	              precision="day"  
+	              value="${bookInstance?.endDate}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'genre', 'error')} required">
@@ -51,7 +53,8 @@
 	          from="${Genre.list()}" 
 	          value="${bookInstance.genre}" 
 	          optionKey="id" 
-	          optionValue="name"/>
+	          optionValue="name"
+	          noSelection="['':'-- Choose a genre --']" />
 
 </div>
 
@@ -62,13 +65,27 @@
 	<g:checkBox name="isCompleted" value="${bookInstance?.isCompleted}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'numOfPages', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'numOfPages', 'error')}">
 	<label for="numOfPages">
-		<g:message code="book.numOfPages.label" default="Num Of Pages" />
-		<span class="required-indicator">*</span>
+		<g:message code="book.numOfPages.label" default="# of Pages" />
 	</label>
 	<g:field name="numOfPages" type="number" value="${bookInstance.numOfPages}" required=""/>
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'bookUrl', 'error')}">
+	<label for="bookUrl">
+		<g:message code="book.bookUrl.label" default="Amazon URL" />
+	</label>
+	<g:field name="bookUrl" type="url" value="${bookInstance.bookUrl}" required=""/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'imageUrl', 'error')}">
+	<label for="imageUrl">
+		<g:message code="book.imageUrl.label" default="Image URL" />
+	</label>
+	<g:field name="imageUrl" type="url" value="${bookInstance.imageUrl}" required=""/>
+</div>
+
 
 
 

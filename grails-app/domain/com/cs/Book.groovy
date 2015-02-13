@@ -10,6 +10,8 @@ class Book {
     Boolean isCompleted
     Integer numOfPages
     Integer genre
+	String bookUrl
+	String imageUrl
 
     static mapping = {
         table 'book'
@@ -24,11 +26,15 @@ class Book {
         isCompleted column:'isCompleted'
         numOfPages column:'numOfPages'
         genre column:'genre'
+		bookUrl column:'bookUrl'
+		imageUrl column:'imageUrl'
     }
 
     static constraints = {
         title blank: false
         author blank: false
         rating range: 1..10
+		bookUrl url: true
+		imageUrl url: true
     }
 }
