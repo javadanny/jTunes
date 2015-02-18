@@ -12,6 +12,7 @@ class Book {
     Integer genre
 	String bookUrl
 	String imageUrl
+	String review
 
     static mapping = {
         table 'book'
@@ -28,6 +29,7 @@ class Book {
         genre column:'genre'
 		bookUrl column:'bookUrl'
 		imageUrl column:'imageUrl'
+		review column:'review'
     }
 
     static constraints = {

@@ -28,7 +28,8 @@ class BookController {
 		
 		// this next statement sets the # of elements in the list
 		// but it doesn't really seem to do anything, always defaults to 10 
-		params.max = Math.min(max ?:10, 100)
+		//params.max = Math.min(max ?:10, 100)
+		params.max = 50
         [bookInstanceList: Book.list(params), bookInstanceTotal: Book.count()]
 		
     }
@@ -105,13 +106,15 @@ class BookController {
 	 * APP: updates a page
 	 */
     def update(Long id, Long version) {
-		System.out.println("update(Long id, Long version")
+		System.out.println("update(Long id, Long version)")
         def bookInstance = Book.get(id)
         if (!bookInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'book.label', default: 'Book'), id])
             redirect(action: "list")
             return
         }
+		
+		System.out.println("Review:" + bookInstance.review);
 
         if (version != null) {
             if (bookInstance.version > version) {

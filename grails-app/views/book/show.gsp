@@ -94,7 +94,8 @@
 				<li class="fieldcontain">
 					<span id="numOfPages-label" class="property-label"><g:message code="book.numOfPages.label" default="Num Of Pages" /></span>
 					
-						<span class="property-value" aria-labelledby="numOfPages-label"><g:fieldValue bean="${bookInstance}" field="numOfPages"/></span>
+						<span class="property-value" aria-labelledby="numOfPages-label">
+						<g:fieldValue bean="${bookInstance}" field="numOfPages"/></span>
 					
 				</li>
                 </g:if>
@@ -109,6 +110,17 @@
 						</g:link></span>
 				</li>
                 </g:if>
+                
+                <g:if test="${bookInstance?.review}">
+				<li class="fieldcontain">
+					<span id="numOfPages-label" class="property-label"><g:message code="book.review.label" default="My Review" /></span>
+					
+						<span class="property-value" aria-labelledby="review-label">
+						<g:fieldValue bean="${bookInstance}" field="review"/></span>
+					
+				</li>
+                </g:if>
+                
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

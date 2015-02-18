@@ -1,12 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: c161635
-  Date: 2/14/14
-  Time: 10:05 PM
---%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="com.cs.Genre" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-	
-	<meta name="layout" content="main">
-	<g:set var="entityName" value="${message(code: 'genre.label', default: 'Genre')}" />
-	<title><g:message code="default.list.label" args="[entityName]" /></title>
+    
+    <g:set var="entityName" value="${message(code: 'genre.label', default: 'Genre')}" />
+		<title><g:message code="default.list.label" args="[entityName]" /></title>
+
+    <title>Carroll Solutions : Showcase</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/jTunes/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+   
+
 </head>
 
 <body>
@@ -37,8 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Carroll Solutions</a>
-        </div>
+			<a class="navbar-brand" href="/jTunes/jumbo">Carroll Solutions</a>        </div>
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -78,102 +73,35 @@
     </div>
 </div>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <h1>Carroll Solutions is alive!!!</h1>
-        <p><script language="JavaScript">displayDeepThought()</script></p>
-        
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-        
-        <div style="display: inline;">
-        
-        	<a target="_new" href="https://www.facebook.com/CarrollSolutions">
-            	<img src="images/facebook-icon.png" alt="Visit Carroll Solutions on Facebook">
-        	</a>
-       		 <a target="_new" href="http://www.twitter.com/CarrollSolutions">
-            	<img src="images/twitter-icon.png" alt="Visit Carroll Solutions on Twitter">
-        	</a>
-        	<a target="_new" href="http://carrollsolutions.tumblr.com/">
-            	<img src="images/tumblr-icon.png" alt="Visit Carroll Solutions on Tumblr">
-        	</a>
-       	 	<a target="_new" href="http://www.youtube.com/CarrollSolutions">
-            	<img src="images/youtube-icon.png" alt="Vistin Carroll Solutions on Youtube">
-        	</a>
-        		
-    	</div>
-    </div>
-</div>
-
 <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Daily Reading List</h3>
-            <ul>
-                <li><a href="http://arstechnica.com">Ars Technica</a></li>
-                <li><a href="http://slashdot.org">Slashdot</a></li>
-                <li><a href="http://lifehack.org">Lifehack.org</a></li>
-            </ul>
-            <h3>Online Learning</h3>
-            <ul>
-            	<li><a href="http://scholar.google.com/">Google Scholar</a></li>
-            	<li><a href="http://stackexchange.com">Stack Exchange</a></li>
-            	<li><a href="http://online.stanford.edu/">Stanford Online</a></li>
-            	<li><a href="https://www.coursera.org/">Coursera</a></li>
-            	<li><a href="http://www.w3schools.com/">W3C Schools</a></li>
-            	<li><a href="http://www.codeschool.com/">Code School (paid)</a></li>
-            	<li><a href="http://www.codeacademy.com">Code Academy</a></li>
-            	<li><a href="http://www.gutenberg.org/catalog/">Project Gutenburg</a></li>
-            	<li><a href="https://www.creativelive.com/">Creative Live</a></li>
-            	<li><a href="http://www.codeacademy.com">Code Academy</a></li>
-            	
-            </ul>
-            <h3>2015 Resolutions</h3>
-        </div>
-        <div class="col-md-4">
-            <h3>Available Controllers</h3>
-            <ul>
-            	<li>Two books per month</li>
-            	<li>Financial plan</li>
-            </ul>
-            <ul>
-                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                    <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-                </g:each>
-            </ul>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            <ul>
-            	<li><a href="https://developers.facebook.com/docs/plugins/share-button">Facebook Share</a></li>
-            </ul>
-            <ul>
-            	<li><a href="https://developer.linkedin.com/plugins/share-plugin-generator?button-type-count-right=true">LinkedIn Share</a>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <h3>Nebraska Stuff</h3>
-            <p>
-                <div class="alert alert-success">
-                <script language="JavaScript">countdown(2014,09,6)</script>
-                </div>
-            </p>
-            <ul>
-            	<li><a href="http://huskerboard.com">Huskerboard</a></li>
-            	<li><a href="http://huskermax.com">Huskermax</a></li>
-            </ul>
-            
-            <!-- BEGIN HuskerMax.com Schedule Widget -->
-			<br/>
-			<iframe src="http://huskermax.com/partners/sked/"
-					width="264px" height="350px" frameborder="0"
-					scrolling="no"></iframe>
-			<br/>
-			<!-- END Widget -->
-            
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
-
+    	<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
+		<div id="list-genre" class="content scaffold-list" role="main">
+			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+			</g:if>
+			<table id="example" class="display">
+				<thead>
+					<tr>
+						<g:sortableColumn property="name" title="${message(code: 'genre.name.label', default: 'Name')}" />
+                        <g:sortableColumn property="description" title="${message(code: 'genre.description.label', default: 'Description')}" />
+					</tr>
+				</thead>
+				<tbody>
+				<g:each in="${genreInstanceList}" status="i" var="genreInstance">
+					<tr>
+                        <td>${fieldValue(bean: genreInstance, field: "name")}</td>
+						<td><g:link action="show" id="${genreInstance.id}">${fieldValue(bean: genreInstance, field: "description")}</g:link></td>
+					</tr>
+				</g:each>
+				</tbody>
+			</table>
+		</div>
     <hr>
 
     <footer>
@@ -192,10 +120,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/jTunes/dist/js/bootstrap.min.js"></script>
 
+<!-- DataTables CSS -->
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
+  
+	<!-- DataTables -->
+	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
 
-
-
-	
-
+	<script type="text/javascript" class="init">
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+	</script>
 </body>
 </html>

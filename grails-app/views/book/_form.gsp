@@ -86,6 +86,14 @@
 	<g:field name="imageUrl" type="url" value="${bookInstance.imageUrl}" required=""/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: bookInstance, field: 'review', 'error')}">
+	<label for="review">
+		<g:message code="book.review.label" default="My Review" />
+	</label>
+	<g:textArea name="review" value="${bookInstance.review}" rows="10" cols="50"/>
+	
+</div>
+
 
 
 
