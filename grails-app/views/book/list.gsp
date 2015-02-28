@@ -86,13 +86,13 @@
 			<table id="example" class="display">
 				<thead>
 					<tr>
-						<g:sortableColumn property="title" title="${message(code: 'book.title.label', default: 'Title')}" />
-						<g:sortableColumn property="author" title="${message(code: 'book.author.label', default: 'Author')}" />
-						<g:sortableColumn property="rating" title="${message(code: 'book.rating.label', default: 'Rating')}" />
-                        <g:sortableColumn property="startDate" title="${message(code: 'book.startDate.label', default: 'Start Date')}" />
-						<g:sortableColumn property="endDate" title="${message(code: 'book.endDate.label', default: 'End Date')}" />
-						<g:sortableColumn property="genre" title="${message(code: 'book.genre.label', default: 'Genre')}" />
-						<g:sortableColumn property="isCompleted" title="${message(code: 'book.isCompleted.label', default: 'Finished?')}" />	
+						<th>Title</th>
+						<th>Author</th>
+						<th>Rating</th>
+                        <th>Start Date</th>
+						<th>End Date</th>
+						<th>Genre</th>
+						<th>Finished?</th>	
 					</tr>
 				</thead>
 				<tbody>
@@ -137,8 +137,10 @@
 
 	<script type="text/javascript" class="init">
 	$(document).ready(function() {
-		$('#example').DataTable();
-	} );
+		$('#example').DataTable( {
+				"order": [[3,"asc"]]
+		} );
+	} );	
 	</script>
 </body>
 </html>
