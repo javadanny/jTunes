@@ -114,7 +114,7 @@ class BookController {
             return
         }
 		
-		System.out.println("Review:" + bookInstance.review);
+		System.out.println("Review:" + bookInstance.startDate);
 
         if (version != null) {
             if (bookInstance.version > version) {

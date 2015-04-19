@@ -12,5 +12,6 @@ class UrlMappings {
 
         "/jumbo"(view:'/jumbotron')
 		"/system"(view:'/system')
+		"/temp"(view:'/template')
 	}
 }

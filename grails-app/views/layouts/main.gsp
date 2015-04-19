@@ -14,6 +14,21 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  		<script>
+ 			$(function() {
+    			$( "#datepicker" ).datepicker({
+						dateFormat: "yy-mm-dd"
+            	});
+    			$( "#anim" ).change(function() {
+      				$( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+    			});
+  			});
+  		</script>
+		
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
