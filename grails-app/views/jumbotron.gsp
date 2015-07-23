@@ -26,7 +26,7 @@
     <!-- 
     <link href="/jTunes/css/jumbotron.css" rel="stylesheet">
 	-->
-
+	
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -178,7 +178,7 @@
             <h3>Nebraska Stuff</h3>
             <p>
                 <div class="alert alert-success">
-                <script language="JavaScript">countdown(2014,09,6)</script>
+                <script language="JavaScript">countdown(2015,09,5)</script>
                 </div>
             </p>
             <ul>
@@ -200,11 +200,13 @@
 
     <hr>
 
-    <footer>
+    <footer ng-app="myapp">
         <p>
         	&copy; Carroll Solutions 2014&nbsp;
             <a href="/jTunes/system">System Specs</a>
+            
         </p>
+        <p>{{ FooterDate.now() | date:'yyyy-MM-dd HH:mm:ss'  }}</p>
         
     </footer>
 </div> <!-- /container -->
@@ -215,6 +217,9 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/jTunes/dist/js/bootstrap.min.js"></script>
+<script src="/jTunes/dist/js/angular.min.js"></script>
+
+<script src="/jTunes/js/app.js"></script>
 
 
 

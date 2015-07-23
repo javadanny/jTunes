@@ -1,15 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="ml-c02ffergdf8v.satx.rr.com" id="0" name="SongTests" package="com.cs" tests="1" time="0.795" timestamp="2013-12-08T04:46:01">
+  <testsuite errors="2" failures="3" hostname="Dannys-MacBook-Air.local" id="0" name="BookControllerTests" package="com.cs" tests="8" time="4.637" timestamp="2015-04-23T02:52:54">
       <properties />
 
-      <testcase classname="com.cs.SongTests" name="testMinimumDuration" time="0.771" />
+      <testcase classname="com.cs.BookControllerTests" name="testIndex" time="2.596" />
 
-      <system-out><![CDATA[--Output from testMinimumDuration--
-ddd
+      <testcase classname="com.cs.BookControllerTests" name="testCreate" time="0.232" />
+
+      <testcase classname="com.cs.BookControllerTests" name="testSave" time="0.339">
+          <failure message="Assertion failed: &#xa;&#xa;assert response.redirectedUrl == &apos;/book/show/1&apos;&#xa;       |        |             |&#xa;       |        null          false&#xa;       org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@60d511ca&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert response.redirectedUrl == &apos;/book/show/1&apos;
+       |        |             |
+       |        null          false
+       org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@60d511ca
+
+	at com.cs.BookControllerTests.testSave(BookControllerTests.groovy:48)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.cs.BookControllerTests" name="testShow" time="0.222">
+          <error message="Cannot get property &apos;genre&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;genre&apos; on null object
+	at com.cs.BookController.show(BookController.groovy:72)
+	at com.cs.BookControllerTests.testShow(BookControllerTests.groovy:54)
+</error>
+
+      </testcase>
+
+      <testcase classname="com.cs.BookControllerTests" name="testList" time="0.617" />
+
+      <testcase classname="com.cs.BookControllerTests" name="testEdit" time="0.222">
+          <error message="No signature of method: com.cs.Genre.list() is applicable for argument types: () values: []&#xa;Possible solutions: list(), list(java.util.Map), last(), last(java.lang.String), last(java.util.Map), first()" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: com.cs.Genre.list() is applicable for argument types: () values: []
+Possible solutions: list(), list(java.util.Map), last(), last(java.lang.String), last(java.util.Map), first()
+	at com.cs.BookController.edit(BookController.groovy:92)
+	at com.cs.BookControllerTests.testEdit(BookControllerTests.groovy:72)
+</error>
+
+      </testcase>
+
+      <testcase classname="com.cs.BookControllerTests" name="testUpdate" time="0.257">
+          <failure message="Assertion failed: &#xa;&#xa;assert book.save() != null&#xa;       |    |      |&#xa;       |    null   false&#xa;       com.cs.Book : (unsaved)&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert book.save() != null
+       |    |      |
+       |    null   false
+       com.cs.Book : (unsaved)
+
+	at com.cs.BookControllerTests.testUpdate(BookControllerTests.groovy:100)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.cs.BookControllerTests" name="testDelete" time="0.095">
+          <failure message="Assertion failed: &#xa;&#xa;assert book.save() != null&#xa;       |    |      |&#xa;       |    null   false&#xa;       com.cs.Book : (unsaved)&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Assertion failed: 
+
+assert book.save() != null
+       |    |      |
+       |    null   false
+       com.cs.Book : (unsaved)
+
+	at com.cs.BookControllerTests.testDelete(BookControllerTests.groovy:144)
+</failure>
+
+      </testcase>
+
+      <system-out><![CDATA[--Output from testIndex--
+Hitting index...
+--Output from testCreate--
+create()
+--Output from testSave--
+save()
+save()
+--Output from testShow--
+show(Long id)
+--Output from testList--
+Hitting list(Integer max)...
+--Output from testEdit--
+edit(Long id)
+--Output from testUpdate--
+update(Long id, Long version)
+--Output from testDelete--
+delete(Long id)
 ]]></system-out>
 
-      <system-err><![CDATA[--Output from testMinimumDuration--
+      <system-err><![CDATA[--Output from testIndex--
+--Output from testCreate--
+--Output from testSave--
+--Output from testShow--
+--Output from testList--
+--Output from testEdit--
+--Output from testUpdate--
+--Output from testDelete--
 ]]></system-err>
 
   </testsuite>
