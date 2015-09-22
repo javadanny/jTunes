@@ -154,13 +154,13 @@
             	
             </ul>
             <h3>2015 Resolutions</h3>
+            <ul>
+            	<li>Two books per month</li>
+            </ul>
         </div>
         <div class="col-md-4">
             <h3>Available Controllers</h3>
-            <ul>
-            	<li>Two books per month</li>
-            	<li>Financial plan</li>
-            </ul>
+            
             <ul>
                 <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
                     <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>

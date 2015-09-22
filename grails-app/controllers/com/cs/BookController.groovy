@@ -30,7 +30,7 @@ class BookController {
 		// but it doesn't really seem to do anything, always defaults to 10 
 		//params.max = Math.min(max ?:10, 100)
 		params.max = 50
-        [bookInstanceList: Book.list(params), bookInstanceTotal: Book.count()]
+		[bookInstanceList: Book.list(params), bookInstanceTotal: Book.count()]
 		
     }
 	
